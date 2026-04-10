@@ -10,15 +10,18 @@ public class JsonParser implements MissionParser {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public Mission parse(File file) {
-        Mission mission = new Mission();
+        MissionBuilders mission = new MissionBuilders();
 
         try {
             JsonNode root = objectMapper.readTree(file);
 
-            mission.setMissionID(getText(root, "missionId"));
+            mission.setMissionId(getText(root, "missionId"));
             mission.setDate(getText(root, "date"));
             mission.setLocation(getText(root, "location"));
-            mission.setOutcome(getText(root, "outcome"));
+            String outcomeStr = getText(root, "outcome");
+            if (!outcomeStr.isEmpty()) {
+                mission.setOutcome(Outcome.valueOf(outcomeStr));
+            }
             mission.setDamageCost(root.has("damageCost") ? root.get("damageCost").asInt() : 0);
 
 
@@ -26,7 +29,10 @@ public class JsonParser implements MissionParser {
                 JsonNode curseNode = root.get("curse");
                 Curse curse = new Curse();
                 curse.setName(getText(curseNode, "name"));
-                curse.setThreatLevel(getText(curseNode, "threatLevel"));
+                String threatLevelStr = getText(curseNode, "threatLevel");
+                if (!threatLevelStr.isEmpty()) {
+                    curse.setThreatLevel(CurseThreatLevel.valueOf(threatLevelStr));
+                }
                 mission.setCurse(curse);
             }
 
@@ -37,7 +43,7 @@ public class JsonParser implements MissionParser {
                     Sorcerer sorcerer = new Sorcerer();
                     sorcerer.setName(getText(sNode, "name"));
                     sorcerer.setRank(getText(sNode, "rank"));
-                    mission.getSorcerers().add(sorcerer);
+                    mission.addSorcerer(sorcerer);
                 }
             }
 
@@ -50,7 +56,7 @@ public class JsonParser implements MissionParser {
                     technique.setType(getText(tNode, "type"));
                     technique.setOwner(getText(tNode, "owner"));
                     technique.setDamage(tNode.has("damage") ? tNode.get("damage").asInt() : 0);
-                    mission.getTechiques().add(technique);
+                    mission.addTechnique(technique);
                 }
             }
 
@@ -63,7 +69,7 @@ public class JsonParser implements MissionParser {
             System.out.println("Ошибка парсинга JSON: " + e.getMessage());
         }
 
-        return mission;
+        return mission.build();
     }
 
     private String getText(JsonNode node, String field) {

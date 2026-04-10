@@ -2,7 +2,7 @@ package org.example;
 
 public class Curse {
     private String name;
-    private String threatLevel;
+    private CurseThreatLevel threatLevel;
 
     public Curse() {}
 
@@ -10,7 +10,7 @@ public class Curse {
         return name;
     }
 
-    public String getThreatLevel() {
+    public CurseThreatLevel getThreatLevel() {
         return threatLevel;
     }
 
@@ -18,7 +18,7 @@ public class Curse {
         this.name = name;
     }
 
-    public void setThreatLevel(String threatLevel) {
+    public void setThreatLevel(CurseThreatLevel threatLevel) {
         this.threatLevel = threatLevel;
     }
 }

@@ -8,7 +8,7 @@ import java.io.File;
 public class XmlParser implements MissionParser {
 
     public Mission parse(File file) {
-        Mission mission = new Mission();
+        MissionBuilders mission = new MissionBuilders();
 
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -16,10 +16,13 @@ public class XmlParser implements MissionParser {
             Document document = builder.parse(file);
             document.getDocumentElement().normalize();
 
-            mission.setMissionID(getTagValue("missionId", document));
+            mission.setMissionId(getTagValue("missionId", document));
             mission.setDate(getTagValue("date", document));
             mission.setLocation(getTagValue("location", document));
-            mission.setOutcome(getTagValue("outcome", document));
+            String outcomeStr = getTagValue("outcome", document);
+            if (!outcomeStr.isEmpty()) {
+                mission.setOutcome(Outcome.valueOf(outcomeStr));
+            }
 
             String damageCost = getTagValue("damageCost", document);
             if (!damageCost.isEmpty()) {
@@ -31,7 +34,10 @@ public class XmlParser implements MissionParser {
                 Element curseElement = (Element) curseNodes.item(0);
                 Curse curse = new Curse();
                 curse.setName(getElementValue(curseElement, "name"));
-                curse.setThreatLevel(getElementValue(curseElement, "threatLevel"));
+                String threatLevelStr = getElementValue(curseElement, "threatLevel");
+                if (!threatLevelStr.isEmpty()) {
+                    curse.setThreatLevel(CurseThreatLevel.valueOf(threatLevelStr));
+                }
                 mission.setCurse(curse);
             }
 
@@ -68,7 +74,7 @@ public class XmlParser implements MissionParser {
             System.out.println("Ошибка парсинга XML: " + e.getMessage());
         }
 
-        return mission;
+        return mission.build();
     }
 
     private String getTagValue(String tag, Document document) {

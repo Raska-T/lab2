@@ -1,14 +1,13 @@
 package org.example;
 
 import org.example.*;
-import org.example.*;
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
-    private static MIssionStorage storage = MIssionStorage.getInstance();
+    private static MissionStorage storage = MissionStorage.getInstance();
     private static MissionLogic logger = MissionLogic.getInstance();
     private static Parsers factory = new Parsers();
 
@@ -25,12 +24,9 @@ public class Main {
                     loadMissionFromFile();
                     break;
                 case "2":
-                    viewAllMissions();
-                    break;
-                case "3":
                     viewMissionDetails();
                     break;
-                case "4":
+                case "3":
                     System.out.println("Конец работы");
                     return;
             }
@@ -40,9 +36,8 @@ public class Main {
     private static void printMenu() {
         System.out.println("МЕНЮ");
         System.out.println("1. Загрузить миссию из файла");
-        System.out.println("2. Показать все загруженные миссии");
-        System.out.println("3. Просмотреть детали миссии");
-        System.out.println("4. Выход");
+        System.out.println("2. Просмотреть детали миссии");
+        System.out.println("3. Выход");
         System.out.print("Выберите действие: ");
     }
 
@@ -72,8 +67,21 @@ public class Main {
             storage.addMission(mission);
             logger.saveMission(mission);
 
-            System.out.println("Миссия успешно загружена");
-            mission.printMission();
+            System.out.println("Выберите тип отчета:");
+            System.out.println("1. Подробный отчет");
+            System.out.println("2. Краткий отчет");
+            System.out.print("Ваш выбор: ");
+
+            int reportType = Integer.parseInt(scanner.nextLine().trim());
+
+            ReportGenerator report;
+            if (reportType == 2) {
+                report = new SmallReport();
+            } else {
+                report = new Report();
+            }
+
+            report.generate(mission);
 
         } catch (Exception e) {
             System.out.println("Ошибка при загрузке миссии: " + e.getMessage());
@@ -97,7 +105,7 @@ public class Main {
                     i + 1,
                     m.getMissionID(),
                     m.getDate(),
-                    m.getLocation().length(),
+                    m.getLocation(),
                     m.getOutcome());
         }
     }
@@ -117,7 +125,23 @@ public class Main {
             int index = Integer.parseInt(scanner.nextLine().trim()) - 1;
             if (index >= 0 && index < missions.size()) {
                 Mission mission = missions.get(index);
-                mission.printMission();
+
+                System.out.println("Выберите тип отчета:");
+                System.out.println("1. Подробный отчет");
+                System.out.println("2. Краткий отчет");
+                System.out.print("Ваш выбор: ");
+
+                int reportType = Integer.parseInt(scanner.nextLine().trim());
+
+                ReportGenerator report;
+                if (reportType == 1) {
+                    report = new Report();
+                } else {
+                    report = new SmallReport();
+                }
+
+                report.generate(mission);
+
             } else {
                 System.out.println("Неверный номер миссии");
             }

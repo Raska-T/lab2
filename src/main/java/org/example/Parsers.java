@@ -3,24 +3,36 @@ package org.example;
 import java.io.File;
 
 public class Parsers {
-    public MissionParser getParser(File fIle){
-        String fileName = fIle.getName();
+    public MissionParser getParser(File file) {
+        String fileName = file.getName();
 
-        if (fileName.endsWith(".txt")){
-            return new Txtparser();
+        String l = "";
+        int lastDotIndex = fileName.lastIndexOf('.');
+        if (lastDotIndex > 0) {
+            l = fileName.substring(lastDotIndex + 1).toLowerCase();
         }
 
-        if (fileName.endsWith(".json")){
-            return new Jsonparser();
+        if (l.equals("txt")) {
+            return new TxtParser();
         }
 
-        if (fileName.endsWith(".xml")){
-            return new Xmlparser();
+        if (l.equals("json")) {
+            return new JsonParser();
         }
 
-        else{
-            System.out.println("Не можем прочитать такой файл");
-            return null;
+        if (l.equals("xml")) {
+            return new XmlParser();
         }
+
+        if (l.equals("yaml")) {
+            return new YamlParser();
+        }
+
+        if (l.isEmpty()) {
+            return new BinaryParser();
+        }
+
+        System.out.println("Невозможно прочитать файл" + l);
+        return null;
     }
 }

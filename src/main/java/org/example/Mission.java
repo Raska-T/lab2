@@ -6,7 +6,7 @@ public class Mission {
     private String missionID;
     private String date;
     private String location;
-    private String outcome;
+    private Outcome outcome;
     private int damageCost;
     private Curse curse;
     private List<Sorcerer> sorcerers;
@@ -30,7 +30,7 @@ public class Mission {
         return location;
     }
 
-    public String getOutcome() {
+    public Outcome getOutcome() {
         return outcome;
     }
 
@@ -66,7 +66,7 @@ public class Mission {
         this.location = location;
     }
 
-    public void setOutcome(String outcome) {
+    public void setOutcome(Outcome outcome) {
         this.outcome = outcome;
     }
 
@@ -88,31 +88,5 @@ public class Mission {
 
     public void setInfo(String info) {
         this.info = info;
-    }
-
-    public void printMission(){
-        System.out.println("Основная информация о миссии: ");
-        System.out.println("outcome: " + outcome);
-
-        if (curse != null){
-            System.out.println("curse.name: " + curse.getName());
-            System.out.println("curse.threatLevel: " + curse.getThreatLevel());
-        }
-
-        if (!sorcerers.isEmpty()){
-            for (Sorcerer s : sorcerers){
-                System.out.println("sorcerer.name: " + s.getName());
-                System.out.println("sorcerer.rank: " + s.getRank());
-            }
-        }
-
-        if (!techiques.isEmpty()){
-            for (Techique r: techiques){
-                System.out.println("technique.name: " + r.getName());
-                System.out.println("technique.type: " + r.getType());
-                System.out.println("technique.owner: " + r.getOwner());
-                System.out.println("technique.damage: " + r.getDamage());
-            }
-        }
     }
 }
