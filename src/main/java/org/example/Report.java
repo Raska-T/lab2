@@ -4,6 +4,9 @@ public class Report implements ReportGenerator {
     @Override
     public void generate(Mission mission) {
         System.out.println("Основная информация о миссии: ");
+        System.out.println("MissionID:  " + mission.getMissionID());
+        System.out.println("Location: " + mission.getLocation());
+        System.out.println("Date: " + mission.getDate());
         System.out.println("Outcome: " + mission.getOutcome());
         System.out.println("CurseName: " + mission.getCurse().getName());
         System.out.println("CurseThreatLevel: " + mission.getCurse().getThreatLevel());

@@ -230,4 +230,33 @@
     "damage" : 420000
   } ],
   "info" : null
+}, {
+  "missionID" : "M-2024-025",
+  "date" : "2024-11-18",
+  "location" : "Токио, район Синдзюку",
+  "outcome" : "PARTIAL_SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие заброшенной станции",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Инумаки Тоге",
+    "rank" : "SEMI_GRADE_1"
+  }, {
+    "name" : "Панда",
+    "rank" : "GRADE_2"
+  } ],
+  "techiques" : [ {
+    "name" : "Проклятая речь",
+    "type" : "INNATE",
+    "owner" : "Инумаки Тоге",
+    "damage" : 430000
+  }, {
+    "name" : "Горилла-режим",
+    "type" : "BODY",
+    "owner" : "Панда",
+    "damage" : 390000
+  } ],
+  "info" : null
 } ]
