@@ -201,4 +201,33 @@
     "damage" : 980000
   } ],
   "info" : null
+}, {
+  "missionID" : "M-2024-031",
+  "date" : "2024-12-02",
+  "location" : "Токио, район Асакуса",
+  "outcome" : "SUCCESS",
+  "damageCost" : 2100000,
+  "curse" : {
+    "name" : "Проклятие красных фонарей",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Тодо Аой",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Разрушительный удар",
+    "type" : "BODY",
+    "owner" : "Тодо Аой",
+    "damage" : 650000
+  }, {
+    "name" : "Проклятый инструмент: копьё",
+    "type" : "WEAPON",
+    "owner" : "Маки Дзэнин",
+    "damage" : 420000
+  } ],
+  "info" : null
 } ]

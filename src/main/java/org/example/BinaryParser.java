@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.*;
 import java.nio.file.*;
+import java.util.List;
 
 public class BinaryParser implements MissionParser {
 
@@ -9,14 +10,7 @@ public class BinaryParser implements MissionParser {
         MissionBuilders builder = new MissionBuilders();
 
         try {
-            byte[] data = Files.readAllBytes(file.toPath());
-            String content = new String(data, "UTF-8");
-
-            if (content.startsWith("\uFEFF")) {
-                content = content.substring(1);
-            }
-
-            String[] lines = content.split("\n");
+            List<String> lines = Files.readAllLines(file.toPath());
 
             for (String line : lines) {
                 if (line.isEmpty()) continue;
@@ -94,9 +88,6 @@ public class BinaryParser implements MissionParser {
                         }
                         break;
 
-                    case "TIMELINE_EVENT":
-                    case "ENEMY_ACTION":
-                    case "CIVILIAN_IMPACT":
                     default:
                         builder.addExtendedData(command, line);
                         break;
