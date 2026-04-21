@@ -1,5 +1,5 @@
-package org.example;
-import org.example.Mission;
+package org.example.parser;
+import org.example.model.Mission;
 import java.io.File;
 
 public interface MissionParser {

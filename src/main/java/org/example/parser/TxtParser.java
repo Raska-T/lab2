@@ -1,4 +1,6 @@
-package org.example;
+package org.example.parser;
+
+import org.example.model.*;
 
 import java.io.*;
 import java.nio.file.*;
@@ -7,7 +9,7 @@ import java.util.*;
 public class TxtParser implements MissionParser {
 
     public Mission parse(File file) {
-        MissionBuilders builder = new MissionBuilders();
+        Mission mission = new Mission();
 
         Curse curse = null;
         Sorcerer currentSorcerer = null;
@@ -28,13 +30,12 @@ public class TxtParser implements MissionParser {
 
                     if (currentSection.equals("SORCERER")) {
                         currentSorcerer = new Sorcerer();
-                        builder.addSorcerer(currentSorcerer);
+                        mission.getSorcerers().add(currentSorcerer);
                     } else if (currentSection.equals("TECHNIQUE")) {
                         currentTechnique = new Techique();
-                        builder.addTechnique(currentTechnique);
+                        mission.getTechiques().add(currentTechnique);
                     } else if (currentSection.equals("CURSE")) {
                         curse = new Curse();
-                        builder.setCurse(curse);
                     }
                     continue;
                 }
@@ -49,7 +50,6 @@ public class TxtParser implements MissionParser {
                     switch (key) {
                         case "name": currentSorcerer.setName(value); break;
                         case "rank": currentSorcerer.setRank(value); break;
-                        default: builder.addExtendedData(currentSection + "." + key, value);
                     }
                 }
                 else if (currentTechnique != null) {
@@ -61,7 +61,6 @@ public class TxtParser implements MissionParser {
                             try { currentTechnique.setDamage(Integer.parseInt(value)); }
                             catch (NumberFormatException e) {}
                             break;
-                        default: builder.addExtendedData(currentSection + "." + key, value);
                     }
                 }
                 else if (curse != null && !currentSection.equals("MISSION")) {
@@ -71,32 +70,40 @@ public class TxtParser implements MissionParser {
                             try { curse.setThreatLevel(CurseThreatLevel.valueOf(value.toUpperCase())); }
                             catch (IllegalArgumentException e) {}
                             break;
-                        default: builder.addExtendedData("curse." + key, value);
                     }
                 }
                 else {
                     switch (key) {
-                        case "missionId": builder.setMissionId(value); break;
-                        case "date": builder.setDate(value); break;
-                        case "location": builder.setLocation(value); break;
+                        case "missionId": mission.setMissionID(value); break;
+                        case "date": mission.setDate(value); break;
+                        case "location": mission.setLocation(value); break;
                         case "outcome":
-                            try { builder.setOutcome(Outcome.valueOf(value.toUpperCase())); }
+                            try { mission.setOutcome(Outcome.valueOf(value.toUpperCase())); }
                             catch (IllegalArgumentException e) {}
                             break;
                         case "damageCost":
-                            try { builder.setDamageCost(Integer.parseInt(value)); }
+                            try { mission.setDamageCost(Integer.parseInt(value)); }
                             catch (NumberFormatException e) {}
                             break;
-                        case "note": builder.setInfo(value); break;
-                        default: builder.addExtendedData(key, value);
+                        case "note": mission.setInfo(value); break;
                     }
                 }
+            }
+
+            if (curse != null) {
+                mission.setCurse(curse);
+            }
+            else{
+                Curse defaultCurse = new Curse();
+                defaultCurse.setName("Неизвестно");
+                defaultCurse.setThreatLevel(CurseThreatLevel.HIGH);
+                mission.setCurse(defaultCurse);
             }
 
         } catch (IOException e) {
             System.out.println("Ошибка чтения файла: " + e.getMessage());
         }
 
-        return builder.build();
+        return mission;
     }
 }

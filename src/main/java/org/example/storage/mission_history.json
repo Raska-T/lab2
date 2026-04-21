@@ -1,0 +1,593 @@
+[ {
+  "missionID" : "M-2024-017",
+  "date" : "2024-10-12",
+  "location" : "Токио, район Сибуя",
+  "outcome" : "SUCCESS",
+  "damageCost" : 1200000,
+  "curse" : {
+    "name" : "Проклятие подземного перехода",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Итадори Юдзи",
+    "rank" : "GRADE_1"
+  }, {
+    "name" : "Фушигуро Мэгуми",
+    "rank" : "GRADE_2"
+  } ],
+  "techiques" : [ {
+    "name" : "Черная вспышка",
+    "type" : "INNATE",
+    "owner" : "Итадори Юдзи",
+    "damage" : 500000
+  }, {
+    "name" : "Техника десяти теней",
+    "type" : "SHIKIGAMI",
+    "owner" : "Фушигуро Мэгуми",
+    "damage" : 700000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-017",
+  "date" : "2024-10-12",
+  "location" : "Токио, район Сибуя",
+  "outcome" : "SUCCESS",
+  "damageCost" : 1200000,
+  "curse" : {
+    "name" : "Проклятие подземного перехода",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Итадори Юдзи",
+    "rank" : "GRADE_1"
+  }, {
+    "name" : "Фушигуро Мэгуми",
+    "rank" : "GRADE_2"
+  } ],
+  "techiques" : [ {
+    "name" : "Черная вспышка",
+    "type" : "INNATE",
+    "owner" : "Итадори Юдзи",
+    "damage" : 500000
+  }, {
+    "name" : "Техника десяти теней",
+    "type" : "SHIKIGAMI",
+    "owner" : "Фушигуро Мэгуми",
+    "damage" : 700000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-025",
+  "date" : "2024-11-18",
+  "location" : "Токио, район Синдзюку",
+  "outcome" : "PARTIAL_SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие заброшенной станции",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Инумаки Тоге",
+    "rank" : "SEMI_GRADE_1"
+  }, {
+    "name" : "Панда",
+    "rank" : "GRADE_2"
+  } ],
+  "techiques" : [ {
+    "name" : "Проклятая речь",
+    "type" : "INNATE",
+    "owner" : "Инумаки Тоге",
+    "damage" : 430000
+  }, {
+    "name" : "Горилла-режим",
+    "type" : "BODY",
+    "owner" : "Панда",
+    "damage" : 390000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-028",
+  "date" : "2024-11-24",
+  "location" : "Токио, район Икэбукуро",
+  "outcome" : "SUCCESS",
+  "damageCost" : 1600000,
+  "curse" : {
+    "name" : "Проклятие ливневого коллектора",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Итадори Юдзи",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Проклятый инструмент: нагината",
+    "type" : "WEAPON",
+    "owner" : "Маки Дзэнин",
+    "damage" : 600000
+  }, {
+    "name" : "Черная вспышка",
+    "type" : "INNATE",
+    "owner" : "Итадори Юдзи",
+    "damage" : 750000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-021",
+  "date" : "2024-11-03",
+  "location" : "Токио, район Гиндза",
+  "outcome" : "SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие стеклянной галереи",
+    "threatLevel" : "SPECIAL_GRADE"
+  },
+  "sorcerers" : [ {
+    "name" : "Кугисаки Нобара",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Нанами Кэнто",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Соломенная кукла",
+    "type" : "INNATE",
+    "owner" : "Кугисаки Нобара",
+    "damage" : 250000
+  }, {
+    "name" : "Коэффициент 7:3",
+    "type" : "INNATE",
+    "owner" : "Нанами Кэнто",
+    "damage" : 980000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-021",
+  "date" : "2024-11-03",
+  "location" : "Токио, район Гиндза",
+  "outcome" : "SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие стеклянной галереи",
+    "threatLevel" : "SPECIAL_GRADE"
+  },
+  "sorcerers" : [ {
+    "name" : "Кугисаки Нобара",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Нанами Кэнто",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Соломенная кукла",
+    "type" : "INNATE",
+    "owner" : "Кугисаки Нобара",
+    "damage" : 250000
+  }, {
+    "name" : "Коэффициент 7:3",
+    "type" : "INNATE",
+    "owner" : "Нанами Кэнто",
+    "damage" : 980000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-021",
+  "date" : "2024-11-03",
+  "location" : "Токио, район Гиндза",
+  "outcome" : "SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие стеклянной галереи",
+    "threatLevel" : "SPECIAL_GRADE"
+  },
+  "sorcerers" : [ {
+    "name" : "Кугисаки Нобара",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Нанами Кэнто",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Соломенная кукла",
+    "type" : "INNATE",
+    "owner" : "Кугисаки Нобара",
+    "damage" : 250000
+  }, {
+    "name" : "Коэффициент 7:3",
+    "type" : "INNATE",
+    "owner" : "Нанами Кэнто",
+    "damage" : 980000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-031",
+  "date" : "2024-12-02",
+  "location" : "Токио, район Асакуса",
+  "outcome" : "SUCCESS",
+  "damageCost" : 2100000,
+  "curse" : {
+    "name" : "Проклятие красных фонарей",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Тодо Аой",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Разрушительный удар",
+    "type" : "BODY",
+    "owner" : "Тодо Аой",
+    "damage" : 650000
+  }, {
+    "name" : "Проклятый инструмент: копьё",
+    "type" : "WEAPON",
+    "owner" : "Маки Дзэнин",
+    "damage" : 420000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-025",
+  "date" : "2024-11-18",
+  "location" : "Токио, район Синдзюку",
+  "outcome" : "PARTIAL_SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие заброшенной станции",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Инумаки Тоге",
+    "rank" : "SEMI_GRADE_1"
+  }, {
+    "name" : "Панда",
+    "rank" : "GRADE_2"
+  } ],
+  "techiques" : [ {
+    "name" : "Проклятая речь",
+    "type" : "INNATE",
+    "owner" : "Инумаки Тоге",
+    "damage" : 430000
+  }, {
+    "name" : "Горилла-режим",
+    "type" : "BODY",
+    "owner" : "Панда",
+    "damage" : 390000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2025-061",
+  "date" : "2025-04-09",
+  "location" : "Осака, деловой район Умэда",
+  "outcome" : "FAILURE",
+  "damageCost" : 8700000,
+  "curse" : {
+    "name" : "Проклятие зеркального фасада",
+    "threatLevel" : "SPECIAL_GRADE"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_1"
+  }, {
+    "name" : "Миуа Касуми",
+    "rank" : "GRADE_3"
+  } ],
+  "techiques" : [ ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-031",
+  "date" : "2024-12-02",
+  "location" : "Токио, район Асакуса",
+  "outcome" : "SUCCESS",
+  "damageCost" : 2100000,
+  "curse" : {
+    "name" : "Проклятие красных фонарей",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Тодо Аой",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Разрушительный удар",
+    "type" : "BODY",
+    "owner" : "Тодо Аой",
+    "damage" : 650000
+  }, {
+    "name" : "Проклятый инструмент: копьё",
+    "type" : "WEAPON",
+    "owner" : "Маки Дзэнин",
+    "damage" : 420000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-021",
+  "date" : "2024-11-03",
+  "location" : "Токио, район Гиндза",
+  "outcome" : "SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие стеклянной галереи",
+    "threatLevel" : "SPECIAL_GRADE"
+  },
+  "sorcerers" : [ {
+    "name" : "Кугисаки Нобара",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Нанами Кэнто",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Соломенная кукла",
+    "type" : "INNATE",
+    "owner" : "Кугисаки Нобара",
+    "damage" : 250000
+  }, {
+    "name" : "Коэффициент 7:3",
+    "type" : "INNATE",
+    "owner" : "Нанами Кэнто",
+    "damage" : 980000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-028",
+  "date" : "2024-11-24",
+  "location" : "Токио, район Икэбукуро",
+  "outcome" : "SUCCESS",
+  "damageCost" : 1600000,
+  "curse" : {
+    "name" : "Проклятие ливневого коллектора",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Итадори Юдзи",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Проклятый инструмент: нагината",
+    "type" : "WEAPON",
+    "owner" : "Маки Дзэнин",
+    "damage" : 600000
+  }, {
+    "name" : "Черная вспышка",
+    "type" : "INNATE",
+    "owner" : "Итадори Юдзи",
+    "damage" : 750000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-031",
+  "date" : "2024-12-02",
+  "location" : "Токио, район Асакуса",
+  "outcome" : "SUCCESS",
+  "damageCost" : 2100000,
+  "curse" : {
+    "name" : "Проклятие красных фонарей",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Тодо Аой",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Разрушительный удар",
+    "type" : "BODY",
+    "owner" : "Тодо Аой",
+    "damage" : 650000
+  }, {
+    "name" : "Проклятый инструмент: копьё",
+    "type" : "WEAPON",
+    "owner" : "Маки Дзэнин",
+    "damage" : 420000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : null,
+  "date" : null,
+  "location" : null,
+  "outcome" : null,
+  "damageCost" : 0,
+  "curse" : null,
+  "sorcerers" : [ ],
+  "techiques" : [ ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : null,
+  "date" : null,
+  "location" : null,
+  "outcome" : null,
+  "damageCost" : 0,
+  "curse" : null,
+  "sorcerers" : [ ],
+  "techiques" : [ ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : null,
+  "date" : null,
+  "location" : null,
+  "outcome" : null,
+  "damageCost" : 0,
+  "curse" : null,
+  "sorcerers" : [ ],
+  "techiques" : [ ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : null,
+  "date" : null,
+  "location" : null,
+  "outcome" : null,
+  "damageCost" : 0,
+  "curse" : null,
+  "sorcerers" : [ ],
+  "techiques" : [ ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-021",
+  "date" : "2024-11-03",
+  "location" : "Токио, район Гиндза",
+  "outcome" : "SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие стеклянной галереи",
+    "threatLevel" : "SPECIAL_GRADE"
+  },
+  "sorcerers" : [ {
+    "name" : "Кугисаки Нобара",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Нанами Кэнто",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Соломенная кукла",
+    "type" : "INNATE",
+    "owner" : "Кугисаки Нобара",
+    "damage" : 250000
+  }, {
+    "name" : "Коэффициент 7:3",
+    "type" : "INNATE",
+    "owner" : "Нанами Кэнто",
+    "damage" : 980000
+  } ],
+  "extendedData" : {
+    "economicAssessment" : {
+      "totalDamageCost" : 4800000,
+      "infrastructureDamage" : 1700000,
+      "transportDamage" : 900000,
+      "commercialDamage" : 2200000,
+      "recoveryEstimateDays" : 18,
+      "insuranceCovered" : true
+    }
+  },
+  "info" : null
+}, {
+  "missionID" : "M-2024-031",
+  "date" : "2024-12-02",
+  "location" : "Токио, район Асакуса",
+  "outcome" : "SUCCESS",
+  "damageCost" : 2100000,
+  "curse" : {
+    "name" : "Проклятие красных фонарей",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Маки Дзэнин",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Тодо Аой",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Разрушительный удар",
+    "type" : "BODY",
+    "owner" : "Тодо Аой",
+    "damage" : 650000
+  }, {
+    "name" : "Проклятый инструмент: копьё",
+    "type" : "WEAPON",
+    "owner" : "Маки Дзэнин",
+    "damage" : 420000
+  } ],
+  "extendedData" : { },
+  "info" : null
+}, {
+  "missionID" : "M-2024-021",
+  "date" : "2024-11-03",
+  "location" : "Токио, район Гиндза",
+  "outcome" : "SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие стеклянной галереи",
+    "threatLevel" : "SPECIAL_GRADE"
+  },
+  "sorcerers" : [ {
+    "name" : "Кугисаки Нобара",
+    "rank" : "GRADE_2"
+  }, {
+    "name" : "Нанами Кэнто",
+    "rank" : "GRADE_1"
+  } ],
+  "techiques" : [ {
+    "name" : "Соломенная кукла",
+    "type" : "INNATE",
+    "owner" : "Кугисаки Нобара",
+    "damage" : 250000
+  }, {
+    "name" : "Коэффициент 7:3",
+    "type" : "INNATE",
+    "owner" : "Нанами Кэнто",
+    "damage" : 980000
+  } ],
+  "extendedData" : {
+    "economicAssessment" : {
+      "totalDamageCost" : 4800000,
+      "infrastructureDamage" : 1700000,
+      "transportDamage" : 900000,
+      "commercialDamage" : 2200000,
+      "recoveryEstimateDays" : 18,
+      "insuranceCovered" : true
+    }
+  },
+  "info" : null
+}, {
+  "missionID" : "M-2024-025",
+  "date" : "2024-11-18",
+  "location" : "Токио, район Синдзюку",
+  "outcome" : "PARTIAL_SUCCESS",
+  "damageCost" : 0,
+  "curse" : {
+    "name" : "Проклятие заброшенной станции",
+    "threatLevel" : "HIGH"
+  },
+  "sorcerers" : [ {
+    "name" : "Инумаки Тоге",
+    "rank" : "SEMI_GRADE_1"
+  }, {
+    "name" : "Панда",
+    "rank" : "GRADE_2"
+  } ],
+  "techiques" : [ {
+    "name" : "Проклятая речь",
+    "type" : "INNATE",
+    "owner" : "Инумаки Тоге",
+    "damage" : 430000
+  }, {
+    "name" : "Горилла-режим",
+    "type" : "BODY",
+    "owner" : "Панда",
+    "damage" : 390000
+  } ],
+  "extendedData" : { },
+  "info" : null
+} ]

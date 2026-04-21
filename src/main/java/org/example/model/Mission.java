@@ -1,6 +1,9 @@
-package org.example;
+package org.example.model;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Mission {
     private String missionID;
@@ -11,11 +14,13 @@ public class Mission {
     private Curse curse;
     private List<Sorcerer> sorcerers;
     private List<Techique> techiques;
+    private Map<String, Object> extendedData;
     private String info;
 
     public Mission() {
         this.sorcerers = new ArrayList<>();
         this.techiques = new ArrayList<>();
+        this.extendedData = new HashMap<>();
     }
 
     public String getMissionID() {
@@ -88,5 +93,17 @@ public class Mission {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public Map<String, Object> getExtendedData() {
+        return extendedData;
+    }
+
+    public void setExtendedData(Map<String, Object> extendedData) {
+        this.extendedData = extendedData;
+    }
+
+    public void addExtendedData(String key, Object value) {
+        this.extendedData.put(key, value);
     }
 }

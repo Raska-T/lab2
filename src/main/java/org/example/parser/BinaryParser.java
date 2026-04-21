@@ -1,13 +1,15 @@
-package org.example;
+package org.example.parser;
+
+import org.example.model.*;
 
 import java.io.*;
 import java.nio.file.*;
-import java.util.List;
+import java.util.*;
 
 public class BinaryParser implements MissionParser {
 
     public Mission parse(File file) {
-        MissionBuilders builder = new MissionBuilders();
+        Mission mission = new Mission();
 
         try {
             List<String> lines = Files.readAllLines(file.toPath());
@@ -23,9 +25,9 @@ public class BinaryParser implements MissionParser {
                 switch (command) {
                     case "MISSION_CREATED":
                         if (parts.length >= 4) {
-                            builder.setMissionId(parts[1].trim());
-                            builder.setDate(parts[2].trim());
-                            builder.setLocation(parts[3].trim());
+                            mission.setMissionID(parts[1].trim());
+                            mission.setDate(parts[2].trim());
+                            mission.setLocation(parts[3].trim());
                         }
                         break;
 
@@ -40,7 +42,7 @@ public class BinaryParser implements MissionParser {
                                 System.out.println("Неизвестный уровень угрозы: '" + threatLevelStr + "', используем HIGH");
                                 curse.setThreatLevel(CurseThreatLevel.HIGH);
                             }
-                            builder.setCurse(curse);
+                            mission.setCurse(curse);
                         }
                         break;
 
@@ -49,7 +51,7 @@ public class BinaryParser implements MissionParser {
                             Sorcerer sorcerer = new Sorcerer();
                             sorcerer.setName(parts[1].trim());
                             sorcerer.setRank(parts[2].trim());
-                            builder.addSorcerer(sorcerer);
+                            mission.getSorcerers().add(sorcerer);
                         }
                         break;
 
@@ -65,7 +67,7 @@ public class BinaryParser implements MissionParser {
                                 System.out.println("Ошибка парсинга damage: " + parts[4]);
                                 technique.setDamage(0);
                             }
-                            builder.addTechnique(technique);
+                            mission.getTechiques().add(technique);
                         }
                         break;
 
@@ -73,14 +75,14 @@ public class BinaryParser implements MissionParser {
                         if (parts.length >= 2) {
                             String outcomeStr = parts[1].trim().toUpperCase();
                             try {
-                                builder.setOutcome(Outcome.valueOf(outcomeStr));
+                                mission.setOutcome(Outcome.valueOf(outcomeStr));
                             } catch (IllegalArgumentException e) {
                                 System.out.println("Неизвестный outcome: '" + outcomeStr + "'");
                             }
                             if (parts.length >= 3 && parts[2].contains("damageCost=")) {
                                 String damageStr = parts[2].substring(parts[2].indexOf("=") + 1).trim();
                                 try {
-                                    builder.setDamageCost(Integer.parseInt(damageStr));
+                                    mission.setDamageCost(Integer.parseInt(damageStr));
                                 } catch (NumberFormatException e) {
                                     System.out.println("Ошибка парсинга damageCost: " + damageStr);
                                 }
@@ -89,15 +91,22 @@ public class BinaryParser implements MissionParser {
                         break;
 
                     default:
-                        builder.addExtendedData(command, line);
+                        System.out.println("Неизвестная команда: " + command);
                         break;
                 }
+            }
+
+            if (mission.getCurse() == null){
+                Curse defaultCurse = new Curse();
+                defaultCurse.setName("Неизвестно");
+                defaultCurse.setThreatLevel(CurseThreatLevel.HIGH);
+                mission.setCurse(defaultCurse);
             }
 
         } catch (IOException e) {
             System.out.println("Ошибка чтения бинарного файла: " + e.getMessage());
         }
 
-        return builder.build();
+        return mission;
     }
 }

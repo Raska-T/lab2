@@ -1,6 +1,6 @@
-package org.example;
+package org.example.parser;
 
-import org.example.*;
+import org.example.model.*;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.File;
@@ -8,25 +8,27 @@ import java.io.File;
 public class XmlParser implements MissionParser {
 
     public Mission parse(File file) {
-        MissionBuilders mission = new MissionBuilders();
+
+        Mission mission = new Mission();
 
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(file);
+            DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+            Document document = documentBuilder.parse(file);
             document.getDocumentElement().normalize();
 
-            mission.setMissionId(getTagValue("missionId", document));
+            mission.setMissionID(getTagValue("missionId", document));
             mission.setDate(getTagValue("date", document));
             mission.setLocation(getTagValue("location", document));
+
             String outcomeStr = getTagValue("outcome", document);
             if (!outcomeStr.isEmpty()) {
                 mission.setOutcome(Outcome.valueOf(outcomeStr));
             }
 
-            String damageCost = getTagValue("damageCost", document);
-            if (!damageCost.isEmpty()) {
-                mission.setDamageCost(Integer.parseInt(damageCost));
+            String damageCostStr = getTagValue("damageCost", document);
+            if (!damageCostStr.isEmpty()) {
+                mission.setDamageCost(Integer.parseInt(damageCostStr));
             }
 
             NodeList curseNodes = document.getElementsByTagName("curse");
@@ -39,6 +41,12 @@ public class XmlParser implements MissionParser {
                     curse.setThreatLevel(CurseThreatLevel.valueOf(threatLevelStr));
                 }
                 mission.setCurse(curse);
+            }
+            else{
+                Curse defaultCurse = new Curse();
+                defaultCurse.setName("Неизвестно");
+                defaultCurse.setThreatLevel(CurseThreatLevel.HIGH);
+                mission.setCurse(defaultCurse);
             }
 
             NodeList sorcererNodes = document.getElementsByTagName("sorcerer");
@@ -58,23 +66,22 @@ public class XmlParser implements MissionParser {
                 technique.setType(getElementValue(tElement, "type"));
                 technique.setOwner(getElementValue(tElement, "owner"));
 
-                String damage = getElementValue(tElement, "damage");
-                if (!damage.isEmpty()) {
-                    technique.setDamage(Integer.parseInt(damage));
+                String damageStr = getElementValue(tElement, "damage");
+                if (!damageStr.isEmpty()) {
+                    technique.setDamage(Integer.parseInt(damageStr));
                 }
                 mission.getTechiques().add(technique);
             }
 
-            NodeList commentNodes = document.getElementsByTagName("comment");
-            if (commentNodes.getLength() > 0) {
-                mission.setInfo(commentNodes.item(0).getTextContent());
+            String info = getTagValue("comment", document);
+            if (!info.isEmpty()) {
+                mission.setInfo(info);
             }
 
         } catch (Exception e) {
             System.out.println("Ошибка парсинга XML: " + e.getMessage());
         }
-
-        return mission.build();
+        return mission;
     }
 
     private String getTagValue(String tag, Document document) {

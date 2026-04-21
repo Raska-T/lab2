@@ -1,6 +1,6 @@
-package org.example;
+package org.example.storage;
 
-import org.example.Mission;
+import org.example.model.Mission;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import java.io.File;

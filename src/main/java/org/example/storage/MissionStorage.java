@@ -1,4 +1,6 @@
-package org.example;
+package org.example.storage;
+
+import org.example.model.Mission;
 
 import java.util.ArrayList;
 import java.util.List;

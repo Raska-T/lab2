@@ -1,4 +1,8 @@
-package org.example;
+package org.example.report;
+
+import org.example.model.Mission;
+import org.example.model.Sorcerer;
+import org.example.model.Techique;
 
 public class Report implements ReportGenerator {
     @Override
