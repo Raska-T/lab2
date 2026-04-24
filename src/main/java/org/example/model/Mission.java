@@ -27,7 +27,7 @@ public class Mission {
         return missionID;
     }
 
-    public String getInfo() {
+    public String getIInfo() {
         return info;
     }
 
