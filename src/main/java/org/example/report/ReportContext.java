@@ -4,7 +4,7 @@ import org.example.model.Mission;
 
 
 public class ReportContext {
-    private ReportGenerator strategy; // Поле - strategy
+    private ReportGenerator strategy;
 
     public void setStrategy(ReportGenerator strategy) { // Метод setStrategy
         this.strategy = strategy;
@@ -12,15 +12,12 @@ public class ReportContext {
 
     public void showReport(Mission mission) {
         if (strategy != null) {
-            strategy.generate(mission); // Вызов метода стратегии
+            strategy.generate(mission);
         } else {
-            System.out.println("Ошибка: стратегия не выбрана");
+            System.out.println("Ошибка: тип отчета не выбран");
         }
     }
 
-    public ReportContext() {}
-
-    public ReportContext(ReportGenerator strategy) {
-        this.strategy = strategy;
+    public ReportContext() {
     }
 }

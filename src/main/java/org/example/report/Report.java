@@ -14,6 +14,7 @@ public class Report implements ReportGenerator {
         System.out.println("Outcome: " + mission.getOutcome());
         System.out.println("CurseName: " + mission.getCurse().getName());
         System.out.println("CurseThreatLevel: " + mission.getCurse().getThreatLevel());
+        System.out.println("DamageCost: " + mission.getDamageCost());
 
         for (Sorcerer s : mission.getSorcerers()) {
             System.out.println("SorcererName: " + s.getName());

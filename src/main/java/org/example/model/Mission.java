@@ -55,10 +55,6 @@ public class Mission {
         return techiques;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
     public void setMissionID(String missionID) {
         this.missionID = missionID;
     }
@@ -83,13 +79,6 @@ public class Mission {
         this.curse = curse;
     }
 
-    public void setSorcerers(List<Sorcerer> sorcerers) {
-        this.sorcerers = sorcerers;
-    }
-
-    public void setTechiques(List<Techique> techiques) {
-        this.techiques = techiques;
-    }
 
     public void setInfo(String info) {
         this.info = info;
@@ -97,10 +86,6 @@ public class Mission {
 
     public Map<String, Object> getExtendedData() {
         return extendedData;
-    }
-
-    public void setExtendedData(Map<String, Object> extendedData) {
-        this.extendedData = extendedData;
     }
 
     public void addExtendedData(String key, Object value) {
