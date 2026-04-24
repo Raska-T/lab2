@@ -55,6 +55,16 @@ public class BinaryParser implements MissionParser {
                         }
                         break;
 
+                    case "TIMELINE_EVENT":
+                        if (parts.length >= 4) {
+                            Timeline event = new Timeline();
+                            event.setTimestamp(parts[1].trim());
+                            event.setType(parts[2].trim());
+                            event.setDescription(parts[3].trim());
+                            mission.addTimelineEvent(event);
+                        }
+                        break;
+
                     case "TECHNIQUE_USED":
                         if (parts.length >= 5) {
                             Techique technique = new Techique();

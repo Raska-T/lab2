@@ -91,4 +91,10 @@ public class Mission {
     public void addExtendedData(String key, Object value) {
         this.extendedData.put(key, value);
     }
+
+    private List<Timeline> timelineEvents = new ArrayList<>();
+
+    public List<Timeline> getTimelineEvents() { return timelineEvents; }
+    
+    public void addTimelineEvent(Timeline event) { timelineEvents.add(event); }
 }

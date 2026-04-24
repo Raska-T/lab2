@@ -3,7 +3,7 @@ package org.example.handler;
 import org.example.parser.MissionParser;
 
 public abstract class BaseHandler implements Handler {
-    protected Handler next;
+    private Handler next;
 
     @Override
     public void setNext(Handler next) {
