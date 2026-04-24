@@ -4,7 +4,7 @@ import org.example.parser.MissionParser;
 
 import java.io.File;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.List;
 
 public class Parsers {
     private Handler firstHandler;
@@ -28,8 +28,8 @@ public class Parsers {
 
     public MissionParser getParser(File file) {
         try {
-            byte[] bytes = Files.readAllBytes(Paths.get(file.toURI()));
-            String content = new String(bytes, "UTF-8");
+            List<String> lines = Files.readAllLines(file.toPath());
+            String content = String.join("\n", lines);
             return firstHandler.handle(content, file.getName());
         } catch (Exception e) {
             System.out.println("Ошибка чтения файла: " + e.getMessage());
