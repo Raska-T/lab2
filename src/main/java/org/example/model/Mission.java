@@ -27,6 +27,10 @@ public class Mission {
         return missionID;
     }
 
+    public String getInfo() {
+        return info;
+    }
+
     public String getDate() {
         return date;
     }
