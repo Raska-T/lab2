@@ -19,9 +19,9 @@ public class Report implements ReportGenerator {
 
 
         for (Timeline e : mission.getTimelineEvents()) {
-            System.out.println("  Timestamp: " + e.getTimestamp());
-            System.out.println("  Type: " + e.getType());
-            System.out.println("  Description: " + e.getDescription());
+            System.out.println("Timestamp: " + e.getTimestamp());
+            System.out.println("Type: " + e.getType());
+            System.out.println("Description: " + e.getDescription());
         }
 
         for (Sorcerer s : mission.getSorcerers()) {

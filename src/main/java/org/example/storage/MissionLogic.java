@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MissionLogic {
-    private static final String path = "mission_history.json";
+    private static final String path = "C:\\Users\\raska\\IdeaProjects\\lab2\\src\\main\\java\\org\\example\\storage\\mission_history.json";
     private static MissionLogic instance;
     private ObjectMapper objectMapper;
 

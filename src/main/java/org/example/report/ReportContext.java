@@ -6,7 +6,7 @@ import org.example.model.Mission;
 public class ReportContext {
     private ReportGenerator strategy;
 
-    public void setStrategy(ReportGenerator strategy) { // Метод setStrategy
+    public void setStrategy(ReportGenerator strategy) {
         this.strategy = strategy;
     }
 
@@ -18,6 +18,5 @@ public class ReportContext {
         }
     }
 
-    public ReportContext() {
-    }
+    public ReportContext() {}
 }
