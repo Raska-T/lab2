@@ -1,11 +1,13 @@
 package org.example.handler;
 
 import org.example.parser.MissionParser;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.util.List;
 
+@Component
 public class Parsers {
     private Handler firstHandler;
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчет</title>
+</head>
+<body>
+
+<h2>Отчет по миссии #<span th:text="${missionId}"></span></h2>
+
+<div>
+    <a th:href="@{'/report/' + ${missionId} + '?type=full'}">Полный отчет</a> |
+    <a th:href="@{'/report/' + ${missionId} + '?type=small'}">Краткий отчет</a>
+</div>
+
+<hr/>
+
+<pre th:text="${report}"></pre>
+
+<br/>
+<a href="/">Назад к списку</a>
+
+<p th:if="${error}" style="color:red" th:text="${error}"></p>
+</body>
+</html>

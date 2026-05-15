@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование миссии</title>
+</head>
+<body>
+
+<h2>Редактирование миссии</h2>
+
+<form th:action="@{/updateWithId/{id}(id=${mission.missionId})}" method="post">
+    <label>ID миссии:</label>
+    <input type="text" name="newMissionId" th:value="${mission.missionId}" required/>
+    <br/><br/>
+
+    <label>Локация:</label>
+    <input type="text" name="location" th:value="${mission.location}" required/>
+    <br/><br/>
+
+    <label>Название проклятья:</label>
+    <input type="text" name="curseName" th:value="${mission.curse != null ? mission.curse.name : ''}" required/>
+    <br/><br/>
+
+    <label>Участники (через запятую):</label>
+    <input type="text" name="sorcerersNames"
+           th:value="${#strings.listJoin(mission.sorcerers.![name], ', ')}"
+           size="50" required/>
+    <br/><br/>
+
+    <label>Статус миссии:</label>
+    <select name="outcome">
+        <option value="SUCCESS" th:selected="${mission.outcome == 'SUCCESS'}">SUCCESS</option>
+        <option value="FAILURE" th:selected="${mission.outcome == 'FAILURE'}">FAILURE</option>
+        <option value="PARTIAL_SUCCESS" th:selected="${mission.outcome == 'PARTIAL_SUCCESS'}">PARTIAL_SUCCESS</option>
+        <option value="UNKNOWN" th:selected="${mission.outcome == 'UNKNOWN'}">UNKNOWN</option>
+    </select>
+    <br/><br/>
+
+    <button type="submit">Сохранить</button>
+    <a href="/">Отмена</a>
+</form>
+
+</body>
+</html>
